@@ -1,0 +1,20 @@
+[
+    {
+      "empid":1,
+      "empname":"Rohit",
+      "age":22,
+      "role":"Admin"
+    },
+    {
+       "empid":2,
+       "empname":"Raj",
+       "age":18,
+       "role":"salesman"
+    },
+    {
+        "empid":3,
+       "empname":"Karan",
+       "age":25,
+       "role":"Programmer"
+    }
+]
