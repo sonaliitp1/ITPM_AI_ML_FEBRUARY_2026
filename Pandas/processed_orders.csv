@@ -1,0 +1,31 @@
+OrderID,Customer,Category,Product,Quantity,Price,Payment,City,Status,TotalAmount
+101,Amit,Electronics,Laptop,1,55000,UPI,Pune,Delivered,55000
+102,Priya,Clothing,T-Shirt,3,900,Card,Mumbai,Delivered,2700
+103,Rahul,Electronics,Mouse,2,1200,Cash,Pune,Pending,2400
+104,Sneha,Furniture,Chair,2,5000,UPI,Delhi,Delivered,10000
+105,Karan,Electronics,Keyboard,1,1800,Card,Pune,Delivered,1800
+106,Neha,Clothing,Jeans,2,1500,UPI,Mumbai,Pending,3000
+107,Riya,Furniture,Table,1,7000,Cash,Delhi,Delivered,7000
+108,Arjun,Electronics,Monitor,1,12000,Card,Bangalore,Delivered,12000
+109,Meera,Clothing,Jacket,2,2500,UPI,Pune,Delivered,5000
+110,Vikas,Electronics,Headphones,3,2000,Cash,Hyderabad,Pending,6000
+111,Anjali,Books,Python Book,2,650,UPI,Nagpur,Delivered,1300
+112,Rohan,Groceries,Rice Bag,4,1200,Card,Nashik,Delivered,4800
+113,Pooja,Electronics,Smartphone,1,25000,UPI,Mumbai,Delivered,25000
+114,Suresh,Furniture,Sofa,1,18000,Cash,Pune,Pending,18000
+115,Komal,Clothing,Saree,2,3500,Card,Kolhapur,Delivered,7000
+116,Yash,Electronics,Tablet,1,18000,UPI,Pune,Delivered,18000
+117,Nikita,Groceries,Oil Can,5,850,Cash,Satara,Delivered,4250
+118,Ajay,Books,Data Science Book,1,950,Card,Aurangabad,Pending,950
+119,Shweta,Electronics,Printer,1,8500,UPI,Nagpur,Delivered,8500
+120,Manoj,Furniture,Bed,1,22000,Card,Mumbai,Delivered,22000
+121,Deepa,Clothing,Shirt,4,1200,Cash,Pune,Delivered,4800
+122,Rakesh,Electronics,Power Bank,2,1800,UPI,Delhi,Pending,3600
+123,Vaishali,Groceries,Sugar,3,180,Cash,Mumbai,Delivered,540
+124,Akash,Books,Java Book,2,750,Card,Pune,Delivered,1500
+125,Tejas,Electronics,Webcam,2,2500,UPI,Hyderabad,Delivered,5000
+126,Mansi,Furniture,Study Table,1,6500,Card,Nashik,Pending,6500
+127,Kishor,Clothing,Trousers,3,1500,Cash,Pune,Delivered,4500
+128,Sonal,Electronics,SSD,2,4500,UPI,Bangalore,Delivered,9000
+129,Rahul,Groceries,Wheat Flour,2,700,Card,Delhi,Delivered,1400
+130,Asha,Books,Machine Learning Book,1,1200,Cash,Pune,Pending,1200

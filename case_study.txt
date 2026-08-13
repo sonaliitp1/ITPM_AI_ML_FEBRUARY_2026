@@ -1,0 +1,141 @@
+# ============================================
+# E-Commerce Order Analysis using
+# NumPy + Pandas + Seaborn
+# ============================================
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# --------------------------------------------
+# Step 1: Load Dataset
+# --------------------------------------------
+df = pd.read_csv("orders.csv")
+
+print("========== FIRST 5 RECORDS ==========")
+print(df.head())
+
+print("\n========== DATA INFORMATION ==========")
+print(df.info())
+
+# --------------------------------------------
+# Step 2: Check Missing Values
+# --------------------------------------------
+print("\n========== MISSING VALUES ==========")
+print(df.isnull().sum())
+
+# Remove missing values
+df = df.dropna()
+
+# --------------------------------------------
+# Step 3: Remove Duplicate Records
+# --------------------------------------------
+df = df.drop_duplicates()
+
+# --------------------------------------------
+# Step 4: Create a New Column using NumPy
+# --------------------------------------------
+df["TotalAmount"] = np.multiply(df["Quantity"], df["Price"])
+
+print("\n========== DATA AFTER ADDING TotalAmount ==========")
+print(df.head())
+
+# --------------------------------------------
+# Step 5: Filter Data
+# --------------------------------------------
+
+print("\n========== ORDERS FROM PUNE ==========")
+pune_orders = df[df["City"] == "Pune"]
+print(pune_orders)
+
+print("\n========== DELIVERED ORDERS ==========")
+delivered_orders = df[df["Status"] == "Delivered"]
+print(delivered_orders)
+
+# --------------------------------------------
+# Step 6: Sort Data
+# --------------------------------------------
+
+print("\n========== SORT BY TOTAL AMOUNT ==========")
+sorted_orders = df.sort_values(by="TotalAmount", ascending=False)
+print(sorted_orders)
+
+# --------------------------------------------
+# Step 7: Group Data
+# --------------------------------------------
+
+print("\n========== PRODUCTS BY CATEGORY ==========")
+category_orders = df.groupby("Category")["Product"].count()
+print(category_orders)
+
+print("\n========== ORDERS BY PAYMENT METHOD ==========")
+payment_orders = df.groupby("Payment")["OrderID"].count()
+print(payment_orders)
+
+# --------------------------------------------
+# Step 8: Save Processed Data
+# --------------------------------------------
+
+df.to_csv("processed_orders.csv", index=False)
+
+print("\nProcessed dataset saved successfully.")
+
+# ============================================
+# VISUALIZATIONS USING SEABORN
+# ============================================
+
+sns.set_style("whitegrid")
+
+# --------------------------------------------
+# 1. Orders by Category
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.countplot(data=df, x="Category")
+plt.title("Orders by Category")
+plt.xticks(rotation=30)
+plt.show()
+
+# --------------------------------------------
+# 2. Payment Method
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.countplot(data=df, x="Payment")
+plt.title("Payment Method Used")
+plt.show()
+
+# --------------------------------------------
+# 3. Order Status
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.countplot(data=df, x="Status")
+plt.title("Order Status")
+plt.show()
+
+# --------------------------------------------
+# 4. City-wise Orders
+# --------------------------------------------
+plt.figure(figsize=(7,4))
+sns.countplot(data=df, x="City")
+plt.title("Orders by City")
+plt.xticks(rotation=45)
+plt.show()
+
+# --------------------------------------------
+# 5. Quantity Purchased by Category
+# --------------------------------------------
+plt.figure(figsize=(7,4))
+sns.barplot(data=df, x="Category", y="Quantity")
+plt.title("Quantity Purchased by Category")
+plt.xticks(rotation=30)
+plt.show()
+
+# --------------------------------------------
+# 6. Total Amount by Payment Method
+# --------------------------------------------
+plt.figure(figsize=(6,4))
+sns.barplot(data=df, x="Payment", y="TotalAmount")
+plt.title("Total Amount by Payment Method")
+plt.show()
+
+print("\n========== ANALYSIS COMPLETED ==========")
